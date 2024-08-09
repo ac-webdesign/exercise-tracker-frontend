@@ -20,7 +20,7 @@ const CreateUser = ()=>{
 
         console.log(user)
 
-        axios.post('http://localhost:5000/users/add', user)
+        axios.post('https://exercise-tracker-backend-kxgd.onrender.com/users/add', user)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
 

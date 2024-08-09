@@ -27,13 +27,13 @@ const ExerciseList = ()=>{
     const [exercises, setExercises] = useState([])
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/exercises')
+        axios.get('https://exercise-tracker-backend-kxgd.onrender.com/exercises')
             .then(res=> setExercises(res.data))
             .catch(err=> console.log(err))
     },[])
 
     const deleteExercise = (id)=>{
-        axios.delete(`http://localhost:5000/exercises/${id}`)
+        axios.delete(`https://exercise-tracker-backend-kxgd.onrender.com/exercises/${id}`)
             .then(res=> console.log(res.data))
             .catch(err => console.log(err))
 

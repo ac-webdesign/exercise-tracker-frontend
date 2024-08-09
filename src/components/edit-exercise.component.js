@@ -16,7 +16,7 @@ const EditExercise = () => {
 
     // Fetch the exercise and user data when the component mounts
     useEffect(() => {
-        axios.get(`http://localhost:5000/exercises/${id}`)
+        axios.get(`https://exercise-tracker-backend-kxgd.onrender.com/exercises/${id}`)
             .then(res => {
                 setUsername(res.data.username);
                 setDescription(res.data.description);
@@ -25,7 +25,7 @@ const EditExercise = () => {
             })
             .catch((err) => console.log(err));
 
-        axios.get('http://localhost:5000/users')
+        axios.get('https://exercise-tracker-backend-kxgd.onrender.com/users')
             .then(response => {
                 if (response.data.length > 0) {
                     setUsers(response.data.map(user => user.username));
@@ -46,7 +46,7 @@ const EditExercise = () => {
 
         console.log(exercise);
 
-        axios.post(`http://localhost:5000/exercises/update/${id}`, exercise)
+        axios.post(`https://exercise-tracker-backend-kxgd.onrender.com/exercises/update/${id}`, exercise)
             .then(res => console.log(res.data))
             .catch(err => console.log(err));
 
